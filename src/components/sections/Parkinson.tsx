@@ -26,7 +26,7 @@ export function Parkinson() {
           href="#contacto"
           className="font-semibold text-emerald-700 underline underline-offset-2 hover:text-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
         >
-          Escribime sin compromiso
+          Escríbeme sin compromiso
         </a>
       </p>
     </SectionWrapper>

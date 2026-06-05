@@ -1,13 +1,21 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Playfair_Display, DM_Sans } from 'next/font/google'
 import './globals.css'
 import { siteContent } from '@/content/site'
 import { JsonLd } from '@/components/ui/JsonLd'
 
-const inter = Inter({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-playfair',
   display: 'swap',
+  weight: ['400', '600', '700'],
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+  weight: ['400', '500', '600'],
 })
 
 const { metadata: meta } = siteContent
@@ -52,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <JsonLd />
       </head>
-      <body className={`${inter.variable} font-sans`}>{children}</body>
+      <body className={`${playfair.variable} ${dmSans.variable} font-sans`}>{children}</body>
     </html>
   )
 }

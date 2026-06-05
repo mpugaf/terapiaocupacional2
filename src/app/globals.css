@@ -3,22 +3,73 @@
 @tailwind utilities;
 
 @layer base {
-  /* Tamaño base generoso y alto interlineado para accesibilidad (usuarios mayores) */
   html {
-    font-size: 1.0625rem; /* 17px */
+    /* 17px base — legibilidad para usuarios mayores */
+    font-size: 1.0625rem;
   }
 
   body {
-    @apply leading-relaxed text-slate-800 antialiased;
+    @apply bg-cream text-ink antialiased leading-relaxed;
   }
 
-  /* Focus rings visibles para navegación por teclado (a11y) */
+  /* Focus rings accesibles en todos los elementos interactivos */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-emerald-500;
+    @apply outline-2 outline-offset-2 outline-olive-500;
   }
 
-  /* Imágenes responsivas por defecto */
   img {
     @apply max-w-full;
+  }
+}
+
+/* ==========================================================================
+   SVG underline animado — Hero
+   Dibujado una sola vez al cargar la página usando stroke-dashoffset
+   ========================================================================== */
+.underline-accent path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw-underline 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+@keyframes draw-underline {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ==========================================================================
+   Scroll reveal — secciones y elementos con entrada suave
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delays escalonados para grupos de elementos */
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+.reveal-delay-4 { transition-delay: 400ms; }
+
+/* Respetar preferencia de movimiento reducido en TODO */
+@media (prefers-reduced-motion: reduce) {
+  .underline-accent path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

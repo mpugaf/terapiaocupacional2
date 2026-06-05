@@ -65,37 +65,37 @@ export const siteContent: SiteContent = {
       'Intervenciones personalizadas enfocadas en las actividades que más importan para cada persona.',
     items: [
       {
-        icon: '🏠',
+        icon: 'key',
         title: 'Evaluación domiciliaria',
         description:
           'Análisis del entorno del hogar para identificar barreras y proponer adaptaciones que favorezcan la seguridad y la autonomía.',
       },
       {
-        icon: '🤝',
+        icon: 'coffee',
         title: 'Actividades de la vida diaria',
         description:
           'Entrenamiento en vestido, higiene, alimentación y movilidad para maximizar la independencia funcional.',
       },
       {
-        icon: '✋',
+        icon: 'pencil',
         title: 'Rehabilitación motora',
         description:
           'Ejercicios específicos para trabajar temblor, rigidez y coordinación, adaptados al estadio de la enfermedad.',
       },
       {
-        icon: '🧠',
+        icon: 'book',
         title: 'Estimulación cognitiva',
         description:
           'Actividades diseñadas para mantener y mejorar memoria, atención y funciones ejecutivas.',
       },
       {
-        icon: '👨‍👩‍👧',
+        icon: 'users',
         title: 'Educación a cuidadores',
         description:
           'Orientación y entrenamiento para que el entorno familiar pueda acompañar de manera efectiva y sostenible.',
       },
       {
-        icon: '📋',
+        icon: 'clipboard',
         title: 'Plan personalizado',
         description:
           'Evaluación integral y diseño de un plan con objetivos medibles, revisado periódicamente con el paciente y su familia.',
