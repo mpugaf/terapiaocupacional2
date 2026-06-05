@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!--
+    Reemplazar [TU_DOMINIO] con el dominio real.
+    Actualizar <lastmod> con la fecha del último cambio de contenido significativo.
+    Cuando se active el blog, agregar una <url> por artículo.
+  -->
+  <url>
+    <loc>https://[TU_DOMINIO]/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Tamaño base generoso y alto interlineado para accesibilidad (usuarios mayores) */
+  html {
+    font-size: 1.0625rem; /* 17px */
+  }
+
+  body {
+    @apply leading-relaxed text-slate-800 antialiased;
+  }
+
+  /* Focus rings visibles para navegación por teclado (a11y) */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-emerald-500;
+  }
+
+  /* Imágenes responsivas por defecto */
+  img {
+    @apply max-w-full;
+  }
+}
