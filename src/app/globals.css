@@ -9,12 +9,12 @@
   }
 
   body {
-    @apply bg-cream text-ink antialiased leading-relaxed;
+    @apply bg-white text-ink antialiased leading-relaxed;
   }
 
   /* Focus rings accesibles en todos los elementos interactivos */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-olive-500;
+    @apply outline-2 outline-offset-2 outline-azure-500;
   }
 
   img {

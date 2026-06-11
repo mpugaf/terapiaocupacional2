@@ -1,7 +1,5 @@
 import { siteContent } from '@/content/site'
 
-// Envuelve la palabra clave en un <span> con el subrayado SVG animado.
-// Si la palabra no está en el headline, renderiza el texto sin modificar.
 function HeadlineWithUnderline({ text }: { text: string }) {
   const keyword = 'autonomía'
   const idx = text.toLowerCase().indexOf(keyword)
@@ -15,11 +13,6 @@ function HeadlineWithUnderline({ text }: { text: string }) {
       {text.slice(0, idx)}
       <span className="relative inline-block whitespace-nowrap">
         {text.slice(idx, idx + keyword.length)}
-        {/*
-          SVG underline animado con stroke-dashoffset.
-          preserveAspectRatio="none" permite que se estire al ancho del texto.
-          La animación se define en globals.css (.underline-accent path).
-        */}
         <svg
           role="presentation"
           aria-hidden="true"
@@ -30,7 +23,7 @@ function HeadlineWithUnderline({ text }: { text: string }) {
         >
           <path
             d="M2,9 C40,3 80,11 120,6 C152,2 175,9 198,5"
-            stroke="#C4956A"
+            stroke="#F59B2B"
             strokeWidth="3.5"
             fill="none"
             strokeLinecap="round"
@@ -49,47 +42,45 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-cream pt-20"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-azure-900 pt-20"
     >
-      {/*
-        Mancha orgánica decorativa — acento secundario (arcilla) muy tenue.
-        Simula una pincelada/acuarela de fondo. opacity muy bajo para no distraer.
-        El border-radius asimétrico genera la forma orgánica sin SVG.
-      */}
+      {/* Patrón de puntos sutil */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-[15%] top-1/2 h-[620px] w-[620px] -translate-y-1/2 bg-clay-300"
+        className="absolute inset-0"
         style={{
-          borderRadius: '67% 33% 47% 53% / 40% 20% 80% 60%',
-          filter: 'blur(72px)',
-          opacity: 0.13,
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
         }}
       />
 
-      {/* Segunda mancha más pequeña — lado izquierdo, muy sutil */}
+      {/* Resplandor azure — esquina superior derecha */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-[8%] bottom-[10%] h-[300px] w-[300px] bg-olive-200"
-        style={{
-          borderRadius: '40% 60% 70% 30% / 50% 40% 60% 50%',
-          filter: 'blur(60px)',
-          opacity: 0.18,
-        }}
+        className="pointer-events-none absolute -right-[10%] -top-[10%] h-[500px] w-[500px] rounded-full bg-azure-500"
+        style={{ filter: 'blur(100px)', opacity: 0.2 }}
+      />
+
+      {/* Resplandor azure — esquina inferior izquierda */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[5%] bottom-[15%] h-[300px] w-[300px] rounded-full bg-azure-400"
+        style={{ filter: 'blur(80px)', opacity: 0.15 }}
       />
 
       <div className="relative z-10 mx-auto w-full max-w-content px-6 py-20 sm:px-8 lg:px-8">
         {/* Eyebrow */}
-        <p className="mb-8 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-olive-500">
+        <p className="mb-8 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-azure-300">
           Terapia Ocupacional · Parkinson
         </p>
 
-        {/* Headline — tipografía de impacto, serif */}
-        <h1 className="mb-8 max-w-[14ch] font-display text-5xl font-bold text-ink sm:text-6xl lg:text-7xl">
+        {/* Headline */}
+        <h1 className="mb-8 max-w-[14ch] font-display text-5xl font-bold text-white sm:text-6xl lg:text-7xl">
           <HeadlineWithUnderline text={headline} />
         </h1>
 
-        {/* Subheadline — sans, generoso, legible */}
-        <p className="mb-12 max-w-prose font-sans text-lg leading-relaxed text-ink-soft">
+        {/* Subheadline */}
+        <p className="mb-12 max-w-prose font-sans text-lg leading-relaxed text-azure-200">
           {subheadline}
         </p>
 
@@ -97,7 +88,7 @@ export function Hero() {
         <div className="flex flex-wrap items-center gap-5">
           <a
             href={cta.primary.href}
-            className="inline-flex items-center rounded-lg bg-olive-500 px-8 py-4 font-sans text-base font-semibold text-cream transition-colors duration-200 ease-smooth hover:bg-olive-600 focus:outline-none focus:ring-4 focus:ring-olive-300"
+            className="inline-flex items-center rounded-xl bg-amber-400 px-8 py-4 font-sans text-base font-bold text-azure-900 transition-colors duration-200 ease-smooth hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-300"
           >
             {cta.primary.label}
           </a>
@@ -105,19 +96,30 @@ export function Hero() {
           {cta.secondary && (
             <a
               href={cta.secondary.href}
-              className="inline-flex items-center gap-2 font-sans text-base font-medium text-ink-soft underline-offset-4 transition-colors duration-200 hover:text-ink focus:outline-none focus:ring-2 focus:ring-olive-400 focus:ring-offset-2"
+              className="inline-flex items-center gap-2 font-sans text-base font-medium text-azure-200 underline-offset-4 transition-colors duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-azure-900"
             >
               {cta.secondary.label}
-              <span aria-hidden="true" className="text-clay-500">→</span>
+              <span aria-hidden="true" className="text-amber-400">→</span>
             </a>
           )}
         </div>
+      </div>
 
-        {/* Detalle decorativo inferior — línea fina en arcilla */}
-        <div
-          aria-hidden="true"
-          className="mt-20 h-px w-24 bg-clay-300 lg:mt-28"
-        />
+      {/* Ola separadora */}
+      <div className="absolute bottom-0 left-0 right-0 leading-none" aria-hidden="true">
+        <svg
+          viewBox="0 0 1440 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="block w-full"
+          style={{ height: '64px' }}
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,32 C180,64 360,0 540,32 C720,64 900,0 1080,32 C1260,64 1350,16 1440,32 L1440,64 L0,64 Z"
+            fill="white"
+          />
+        </svg>
       </div>
     </section>
   )

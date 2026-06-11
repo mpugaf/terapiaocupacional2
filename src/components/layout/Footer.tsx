@@ -4,7 +4,7 @@ export function Footer() {
   const { metadata } = siteContent
 
   return (
-    <footer className="bg-slate-900 py-12 text-slate-300">
+    <footer className="bg-azure-900 py-12 text-azure-200">
       <div className="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Nombre y descripción breve */}
@@ -15,14 +15,14 @@ export function Footer() {
 
           {/* Datos de contacto rápido */}
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-azure-400">
               Contacto
             </p>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href={`tel:${metadata.phone.replace(/\s/g, '')}`}
-                  className="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                  className="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-azure-400"
                 >
                   {metadata.phone}
                 </a>
@@ -30,7 +30,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${metadata.email}`}
-                  className="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                  className="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-azure-400"
                 >
                   {metadata.email}
                 </a>
@@ -41,10 +41,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Redes sociales (solo muestra los que estén configurados) */}
+          {/* Redes sociales */}
           {(metadata.socialLinks.instagram || metadata.socialLinks.linkedin) && (
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-azure-400">
                 Redes
               </p>
               <ul className="space-y-2 text-sm">
@@ -54,7 +54,7 @@ export function Footer() {
                       href={metadata.socialLinks.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                      className="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-azure-400"
                     >
                       Instagram
                     </a>
@@ -66,7 +66,7 @@ export function Footer() {
                       href={metadata.socialLinks.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                      className="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-azure-400"
                     >
                       LinkedIn
                     </a>
@@ -77,7 +77,7 @@ export function Footer() {
           )}
         </div>
 
-        <div className="mt-10 border-t border-slate-700 pt-6 text-center text-sm text-slate-500">
+        <div className="mt-10 border-t border-azure-800 pt-6 text-center text-sm text-azure-400">
           <p>
             © {new Date().getFullYear()} {metadata.businessName}. Todos los derechos reservados.
           </p>

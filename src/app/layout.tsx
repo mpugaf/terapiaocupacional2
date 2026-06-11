@@ -1,21 +1,22 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, DM_Sans } from 'next/font/google'
+import { Libre_Baskerville, Nunito } from 'next/font/google'
 import './globals.css'
 import { siteContent } from '@/content/site'
 import { JsonLd } from '@/components/ui/JsonLd'
 
-const playfair = Playfair_Display({
+const baskerville = Libre_Baskerville({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-baskerville',
   display: 'swap',
-  weight: ['400', '600', '700'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
 })
 
-const dmSans = DM_Sans({
+const nunito = Nunito({
   subsets: ['latin'],
-  variable: '--font-dm-sans',
+  variable: '--font-nunito',
   display: 'swap',
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
 })
 
 const { metadata: meta } = siteContent
@@ -60,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <JsonLd />
       </head>
-      <body className={`${playfair.variable} ${dmSans.variable} font-sans`}>{children}</body>
+      <body className={`${baskerville.variable} ${nunito.variable} font-sans`}>{children}</body>
     </html>
   )
 }

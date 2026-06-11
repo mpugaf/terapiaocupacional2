@@ -10,10 +10,10 @@ export function Contacto() {
   const { phone, email, address, coordinates } = siteContent.metadata
 
   return (
-    <SectionWrapper id="contacto" className="bg-white">
+    <SectionWrapper id="contacto" className="bg-azure-50">
       <div className="mb-12 text-center">
-        <h2 className="mb-4 text-3xl font-bold text-slate-900 sm:text-4xl">{heading}</h2>
-        <p className="mx-auto max-w-2xl text-lg text-slate-600">{subheading}</p>
+        <h2 className="mb-4 font-display text-3xl font-bold text-ink sm:text-4xl">{heading}</h2>
+        <p className="mx-auto max-w-2xl text-lg text-ink-soft">{subheading}</p>
       </div>
 
       <div className="grid gap-10 lg:grid-cols-2">
@@ -22,7 +22,7 @@ export function Contacto() {
           <ContactCard icon="📞" label="Teléfono">
             <a
               href={`tel:${phone.replace(/\s/g, '')}`}
-              className="text-emerald-700 hover:underline focus:outline-none focus:ring-2 focus:ring-emerald-400"
+              className="text-azure-500 hover:text-azure-700 hover:underline focus:outline-none focus:ring-2 focus:ring-azure-400"
             >
               {phone}
             </a>
@@ -31,14 +31,14 @@ export function Contacto() {
           <ContactCard icon="✉️" label="Email">
             <a
               href={`mailto:${email}`}
-              className="break-all text-emerald-700 hover:underline focus:outline-none focus:ring-2 focus:ring-emerald-400"
+              className="break-all text-azure-500 hover:text-azure-700 hover:underline focus:outline-none focus:ring-2 focus:ring-azure-400"
             >
               {email}
             </a>
           </ContactCard>
 
           <ContactCard icon="📍" label="Dirección">
-            <address className="not-italic text-slate-700">
+            <address className="not-italic text-ink-soft">
               {address.street}, {address.city}
               <br />
               {address.region}, {address.country}
@@ -46,16 +46,15 @@ export function Contacto() {
           </ContactCard>
 
           <ContactCard icon="🕐" label="Horario">
-            <p className="text-slate-700">{schedule}</p>
+            <p className="text-ink-soft">{schedule}</p>
           </ContactCard>
 
-          {/* Placeholder visible mientras features.contactForm = false */}
           {!features.contactForm && (
-            <div className="rounded-xl border-2 border-dashed border-slate-200 p-5 text-center">
-              <p className="text-sm text-slate-500">
-                <span className="block font-medium text-slate-600">Formulario de contacto</span>
+            <div className="rounded-xl border-2 border-dashed border-azure-200 p-5 text-center">
+              <p className="text-sm text-ink-muted">
+                <span className="block font-medium text-ink-soft">Formulario de contacto</span>
                 Próximamente —{' '}
-                <code className="rounded bg-slate-100 px-1 text-xs">features.contactForm</code>
+                <code className="rounded bg-azure-100 px-1 text-xs">features.contactForm</code>
               </p>
             </div>
           )}
@@ -68,11 +67,11 @@ export function Contacto() {
           {features.map ? (
             <MapEmbed lat={coordinates.lat} lng={coordinates.lng} />
           ) : (
-            <div className="flex h-48 items-center justify-center rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50">
-              <p className="text-center text-sm text-slate-500">
-                <span className="block font-medium text-slate-600">Mapa de ubicación</span>
+            <div className="flex h-48 items-center justify-center rounded-2xl border-2 border-dashed border-azure-200 bg-white">
+              <p className="text-center text-sm text-ink-muted">
+                <span className="block font-medium text-ink-soft">Mapa de ubicación</span>
                 Próximamente —{' '}
-                <code className="rounded bg-slate-100 px-1 text-xs">features.map</code>
+                <code className="rounded bg-azure-100 px-1 text-xs">features.map</code>
               </p>
             </div>
           )}
@@ -90,12 +89,12 @@ interface ContactCardProps {
 
 function ContactCard({ icon, label, children }: ContactCardProps) {
   return (
-    <div className="flex items-start gap-4 rounded-xl bg-slate-50 p-5">
+    <div className="flex items-start gap-4 rounded-xl bg-white p-5 shadow-sm">
       <span className="shrink-0 text-2xl" aria-hidden="true">
         {icon}
       </span>
       <div>
-        <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">
+        <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-ink-muted">
           {label}
         </p>
         {children}

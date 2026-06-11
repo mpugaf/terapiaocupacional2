@@ -9,44 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: '#FAF7F4',
-
-        olive: {
-          50:  '#F4F7F3',
-          100: '#E3EBE2',
-          200: '#C5D8C4',
-          300: '#9DBE9B',
-          400: '#739D71',
-          500: '#5C7A5A',
-          600: '#486048',
-          700: '#3A4D3A',
-          800: '#2F3E2F',
-          900: '#263326',
+        azure: {
+          50:  '#EEF4FA',
+          100: '#C9DCF0',
+          200: '#A3C4E6',
+          300: '#7DACDB',
+          400: '#5793D1',
+          500: '#2E6DA4',
+          600: '#245A8A',
+          700: '#1B4370',
+          800: '#122C56',
+          900: '#0A1A3C',
         },
 
-        clay: {
-          50:  '#FDF8F3',
-          100: '#F9EDD8',
-          200: '#F2D7B1',
-          300: '#E8BC84',
-          400: '#DA9C59',
-          500: '#C4956A',
-          600: '#A87A52',
-          700: '#8C6142',
-          800: '#744F36',
-          900: '#61412D',
+        amber: {
+          50:  '#FFF8EC',
+          100: '#FEE9C3',
+          200: '#FDCE85',
+          300: '#FBB042',
+          400: '#F59B2B',
+          500: '#E8862A',
+          600: '#C46720',
+          700: '#A04D1A',
         },
 
         ink: {
-          DEFAULT: '#1A1A18',
-          soft:    '#4A4A47',
-          muted:   '#7A7A75',
+          DEFAULT: '#1A2035',
+          soft:    '#4A5670',
+          muted:   '#7A879A',
         },
       },
 
       fontFamily: {
-        display: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans:    ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-baskerville)', 'Georgia', 'serif'],
+        sans:    ['var(--font-nunito)', 'system-ui', 'sans-serif'],
       },
 
       fontSize: {
