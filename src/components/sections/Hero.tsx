@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { siteContent } from '@/content/site'
 
 function HeadlineWithUnderline({ text }: { text: string }) {
@@ -69,39 +70,69 @@ export function Hero() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-content px-6 py-20 sm:px-8 lg:px-8">
-        {/* Eyebrow */}
-        <p className="mb-8 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-azure-300">
-          Terapia Ocupacional · Parkinson
-        </p>
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          {/* Columna texto */}
+          <div>
+            {/* Eyebrow */}
+            <p className="mb-8 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-azure-300">
+              Terapia Ocupacional · Parkinson
+            </p>
 
-        {/* Headline */}
-        <h1 className="mb-8 max-w-[14ch] font-display text-5xl font-bold text-white sm:text-6xl lg:text-7xl">
-          <HeadlineWithUnderline text={headline} />
-        </h1>
+            {/* Headline */}
+            <h1 className="mb-8 max-w-[14ch] font-display text-5xl font-bold text-white sm:text-6xl lg:text-7xl">
+              <HeadlineWithUnderline text={headline} />
+            </h1>
 
-        {/* Subheadline */}
-        <p className="mb-12 max-w-prose font-sans text-lg leading-relaxed text-azure-200">
-          {subheadline}
-        </p>
+            {/* Subheadline */}
+            <p className="mb-12 max-w-prose font-sans text-lg leading-relaxed text-azure-200">
+              {subheadline}
+            </p>
 
-        {/* CTAs */}
-        <div className="flex flex-wrap items-center gap-5">
-          <a
-            href={cta.primary.href}
-            className="inline-flex items-center rounded-xl bg-amber-400 px-8 py-4 font-sans text-base font-bold text-azure-900 transition-colors duration-200 ease-smooth hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-300"
-          >
-            {cta.primary.label}
-          </a>
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-5">
+              <a
+                href={cta.primary.href}
+                className="inline-flex items-center rounded-xl bg-amber-400 px-8 py-4 font-sans text-base font-bold text-azure-900 transition-colors duration-200 ease-smooth hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-300"
+              >
+                {cta.primary.label}
+              </a>
 
-          {cta.secondary && (
-            <a
-              href={cta.secondary.href}
-              className="inline-flex items-center gap-2 font-sans text-base font-medium text-azure-200 underline-offset-4 transition-colors duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-azure-900"
-            >
-              {cta.secondary.label}
-              <span aria-hidden="true" className="text-amber-400">→</span>
-            </a>
-          )}
+              {cta.secondary && (
+                <a
+                  href={cta.secondary.href}
+                  className="inline-flex items-center gap-2 font-sans text-base font-medium text-azure-200 underline-offset-4 transition-colors duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-azure-400 focus:ring-offset-2 focus:ring-offset-azure-900"
+                >
+                  {cta.secondary.label}
+                  <span aria-hidden="true" className="text-amber-400">→</span>
+                </a>
+              )}
+            </div>
+          </div>
+
+          {/* Columna imagen */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* Halo de resplandor detrás de la imagen */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'radial-gradient(circle, rgba(96,165,250,0.25) 0%, transparent 70%)',
+                  filter: 'blur(24px)',
+                  transform: 'scale(1.15)',
+                }}
+              />
+              <Image
+                src="https://res.cloudinary.com/dmbkdrlcj/image/upload/v1781152858/sinapsis1_n3hdfq.png"
+                alt="Red neuronal sináptica — Terapia Ocupacional Parkinson"
+                width={480}
+                height={480}
+                priority
+                className="relative drop-shadow-[0_0_40px_rgba(96,165,250,0.35)]"
+                style={{ opacity: 0.92 }}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
