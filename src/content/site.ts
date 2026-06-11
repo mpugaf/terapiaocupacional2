@@ -30,7 +30,7 @@ export const siteContent: SiteContent = {
       lng: -70.6693, // reemplazar con coordenadas reales del consultorio
     },
     socialLinks: {
-      whatsapp: '569[NUMERO_WHATSAPP]', // sin espacios ni guiones, con código de país (+56)
+      whatsapp: '56972191941', // sin espacios ni guiones, con código de país (+56)
       instagram: 'https://instagram.com/[HANDLE_INSTAGRAM]',
       linkedin: 'https://linkedin.com/in/[PERFIL_LINKEDIN]',
     },
